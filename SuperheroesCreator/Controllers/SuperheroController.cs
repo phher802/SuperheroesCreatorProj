@@ -100,7 +100,13 @@ namespace SuperheroesCreator.Controllers
         // GET: SuperheroController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Superhero superhero = _context.Superheroes.Find(id);
+
+            if (superhero == null)
+            {
+                return HttpNotFound();
+            }
+            return View(superhero);
         }
 
         // POST: SuperheroController/Delete/5
