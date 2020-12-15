@@ -90,9 +90,9 @@ p {
 }
 
 abbr[data-original-title], abbr[title] {
-    text-decoration: underline;
+    /*text-decoration: underline;
     -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted;
+    text-decoration: underline dotted;*/
     cursor: help;
     border-bottom: 0;
     -webkit-text-decoration-skip-ink: none;
@@ -152,13 +152,13 @@ sup {
 
 a {
     color: #333;
-    text-decoration: underline;
+   /* text-decoration: underline;*/
     background-color: transparent
 }
 
     a:hover {
         color: #0d0d0d;
-        text-decoration: underline
+        /*text-decoration: underline*/
     }
 
     a:not([href]):not([class]) {
@@ -3149,16 +3149,16 @@ a.btn.disabled, fieldset:disabled a.btn {
 .btn-link {
     font-weight: 400;
     color: #333;
-    text-decoration: underline
+   /* text-decoration: underline*/
 }
 
     .btn-link:hover {
         color: #0d0d0d;
-        text-decoration: underline
+       /* text-decoration: underline*/
     }
 
     .btn-link.focus, .btn-link:focus {
-        text-decoration: underline
+       /* text-decoration: underline*/
     }
 
     .btn-link.disabled, .btn-link:disabled {
@@ -4969,7 +4969,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
         }
 
         .breadcrumb-item + .breadcrumb-item:hover::before {
-            text-decoration: underline
+          /*  text-decoration: underline*/
         }
 
         .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -10349,7 +10349,7 @@ a.text-dark:focus, a.text-dark:hover {
     }
 
     a:not(.btn) {
-        text-decoration: underline
+       /* text-decoration: underline*/
     }
 
     abbr[title]::after {
