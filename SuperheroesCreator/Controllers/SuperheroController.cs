@@ -62,16 +62,33 @@ namespace SuperheroesCreator.Controllers
         // GET: SuperheroController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Superhero superhero = _context.Superheroes.Find(id);
+            if (superhero == null)
+            {
+                return HttpNotFound();
+            }
+            return View(superhero);
+        }
+
+        private ActionResult HttpNotFound()
+        {
+            throw new NotImplementedException();
         }
 
         // POST: SuperheroController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Superhero superhero)
         {
             try
             {
+                //linq alternative:
+                //var hero = _context.Superheroes.Where(s => s.Id == superhero.Id).FirstOrDefault();
+                //_context.Superheroes.Remove(hero);
+                //_context.Superheroes.Add(superhero);
+
+                _context.Superheroes.Update(superhero);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
