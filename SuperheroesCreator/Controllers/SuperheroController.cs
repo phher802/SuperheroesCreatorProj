@@ -29,15 +29,14 @@ namespace SuperheroesCreator.Controllers
         // GET: SuperheroController/Details/5
         public ActionResult Details(int id)
         {
-        
-            return View();
+            Superhero heroDetails = _context.Superheroes.Find(id);
+            return View(heroDetails);
         }
 
         // GET: SuperheroController/Create
         public ActionResult Create()
         {
        
-
             return View();
         }
 
