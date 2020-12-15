@@ -112,10 +112,20 @@ namespace SuperheroesCreator.Controllers
         // POST: SuperheroController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Superhero superhero)
         {
             try
             {
+                //linq alternative:
+                //var heroToDelete = _context.Superheroes.Where(s => s.Id == id).ToList();
+                //foreach (var hero in heroToDelete)
+                //{
+                //    _context.Superheroes.Remove(hero);
+                //}
+                   
+                var heroToDelete = _context.Superheroes.Find(id);
+                _context.Superheroes.Remove(heroToDelete);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
