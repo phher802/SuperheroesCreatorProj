@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SuperheroesCreator.Data;
 using SuperheroesCreator.Models;
 
@@ -21,28 +22,35 @@ namespace SuperheroesCreator.Controllers
         // GET: SuperheroController
         public ActionResult Index()
         {
-           
+            List<Superhero> heroList = new List<Superhero>();
+            return View(heroList);
         }
 
         // GET: SuperheroController/Details/5
         public ActionResult Details(int id)
         {
+        
             return View();
         }
 
         // GET: SuperheroController/Create
         public ActionResult Create()
         {
+       
+
             return View();
         }
 
         // POST: SuperheroController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Superhero superhero)
         {
             try
             {
+                //todo: add insert logic here
+                _context.Superheroes.Add(superhero);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
