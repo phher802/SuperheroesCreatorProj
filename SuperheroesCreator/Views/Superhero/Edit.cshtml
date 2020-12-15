@@ -1,0 +1,54 @@
+﻿@model SuperheroesCreator.Models.Superhero
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Superhero</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="SuperheroName" class="control-label"></label>
+                <input asp-for="SuperheroName" class="form-control" />
+                <span asp-validation-for="SuperheroName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlterEgo" class="control-label"></label>
+                <input asp-for="AlterEgo" class="form-control" />
+                <span asp-validation-for="AlterEgo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimaryAbility" class="control-label"></label>
+                <input asp-for="PrimaryAbility" class="form-control" />
+                <span asp-validation-for="PrimaryAbility" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondaryAbility" class="control-label"></label>
+                <input asp-for="SecondaryAbility" class="form-control" />
+                <span asp-validation-for="SecondaryAbility" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Catchphrase" class="control-label"></label>
+                <input asp-for="Catchphrase" class="form-control" />
+                <span asp-validation-for="Catchphrase" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
