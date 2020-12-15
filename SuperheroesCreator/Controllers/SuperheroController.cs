@@ -22,8 +22,9 @@ namespace SuperheroesCreator.Controllers
         // GET: SuperheroController
         public ActionResult Index()
         {
-            List<Superhero> heroList = new List<Superhero>();
-            return View(heroList);
+            //List<Superhero> heroList = new List<Superhero>();
+            var superheroes = _context.Superheroes.ToList();
+            return View(superheroes);
         }
 
         // GET: SuperheroController/Details/5
