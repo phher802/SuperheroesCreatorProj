@@ -16,8 +16,6 @@ namespace SuperheroesCreator.Data
             
         }
 
-        public object Superheroes { get; internal set; }
 
-        public DbSet<SuperheroesCreator.Models.Superhero> Superhero { get; set; }
     }
 }
